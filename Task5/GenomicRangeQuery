@@ -1,0 +1,28 @@
+function solution($S, $P, $Q) {
+     // write your code in PHP7.0
+    $nucl=array('A'=>1,'C'=>2,'G'=>3,'T'=>4);
+    $str=str_split($S);
+    $rez=array();
+    for ($i=0;$i<count($P);$i++){
+        $req_str = substr($S, $P[$i], $Q[$i] - $P[$i] + 1);
+              
+        if (strpos($req_str, 'A') !== false) {
+                array_push($rez, 1);
+                continue;
+        }
+        if (strpos($req_str, 'C') !== false) {
+                array_push($rez, 2);
+                continue;
+        }
+        if (strpos($req_str, 'G') !== false) {
+                array_push($rez, 3);
+                continue;
+        }
+        if (strpos($req_str, 'T') !== false) {
+                array_push($rez, 4);
+                continue;
+        }
+       
+    }
+    return ($rez);
+}
